@@ -3,7 +3,6 @@ import axios from 'axios';
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-import MovieSearch from './movie_search';
 
 const styles = {
   root: {
@@ -12,18 +11,19 @@ const styles = {
     justifyContent: 'space-around'
   },
   gridList: {
-    width: 600,
-    height: 500,
+    width: 1000,
+    height: 800,
     overflowY: 'auto',
     marginBottom: 24,
   }
 };
 
-class Latest extends Component {
+class Popular extends Component {
 	constructor(props) {
     super(props);
     this.state = {
-      popularMovies:[]
+      popularMovies:[],
+      movieStatus: false
     };
 
     this.Apicall = this.Apicall.bind(this);
@@ -37,7 +37,8 @@ class Latest extends Component {
     }).then(response => {
       if (response.data.results) {
         this.setState({
-          popularMovies: response.data.results
+          popularMovies: response.data.results,
+          movieStatus: true
         });
       } else {
         this.setState({
@@ -76,16 +77,13 @@ class Latest extends Component {
   render() {
     return (
       <div>
-        <div>
+        {this.state.movieStatus === true ? (<div>
           <h3>Popular Movies</h3>
           <div style={styles.root}>{this.popularMoviesSearch()}</div>
-        </div>
-        <div>
-          <MovieSearch />
-        </div>
+        </div>) : <p></p>}
       </div>
     );
   }
 }
 
-export default Latest;
+export default Popular;

@@ -29,7 +29,8 @@ class MovieSearch extends Component {
     super(props);
     this.state = {
       searchMovie: "",
-      resultMovies:[]
+      resultMovies:[],
+      movieStatus: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.Apicall = this.Apicall.bind(this);
@@ -50,7 +51,8 @@ class MovieSearch extends Component {
     }).then(response =>  {
     	if (response.data.results) {
 		    this.setState({
-		      resultMovies: response.data.results
+		      resultMovies: response.data.results,
+          movieStatus: true
 		    });
 		  } else {
 		  	this.setState({
@@ -91,7 +93,7 @@ class MovieSearch extends Component {
             <RaisedButton type="submit" label="Search" style={styles.searchButton} />
 	        </form>
 	      </div>
-	      <div style={styles.root}>{this.searchedMovies()}</div>
+        {this.state.movieStatus === true ? <div style={styles.root}>{this.searchedMovies()}</div> : <p></p>}
     	</div>
     );
   }

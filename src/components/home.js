@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../assets/images/logo.jpg';
-// import MovieSearch from './movie_search';
-import Latest from './latest';
+import MovieSearch from './movie_search';
+import Popular from './popular';
 
 class Home extends Component {
   render() {
@@ -13,7 +13,10 @@ class Home extends Component {
 	        <p className="title-greeting">Enjoy and Grow your <u>HollyWood</u> knowledge</p>
 	      </div>
 	      <div>
-          <Latest />
+          <MovieSearch />
+        </div>
+	      <div>
+          <Popular />
         </div>
     	</div>
     );

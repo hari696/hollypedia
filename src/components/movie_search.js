@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
-import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
 const styles = {
 	root: {
@@ -16,7 +17,11 @@ const styles = {
 		height: 500,
 		overflowY: 'auto',
 		marginBottom: 24,
-	}
+	},
+  searchButton:{
+    margin: 12,
+    height:35,
+  }
 };
 
 class MovieSearch extends Component {
@@ -64,15 +69,14 @@ class MovieSearch extends Component {
           title={movie.title}
           subtitle={<span>released on <b>{movie.release_date}</b></span>}
           actionIcon={<IconButton><StarBorder color="white" /></IconButton>}>
-          <img alt="true" src={'https://image.tmdb.org/t/p/w185_and_h278_bestv2'+movie.poster_path} />
+          <img alt="Not Available" src={'https://image.tmdb.org/t/p/w500_and_h500_bestv2'+movie.poster_path} />
         </GridTile>
 		);
   	} else {
-  		movieLists = <h5>Movie not found!</h5>
+  		// movieLists = <h5>Movie not found!</h5>
   	}
   	return (
-  		<GridList cellHeight={200} style={styles.gridList}>
-	      <Subheader>Searched Movie:{this.state.searchMovie}</Subheader>
+  		<GridList cellHeight={300} style={styles.gridList}>
 	      {movieLists}
 	    </GridList>
   		);
@@ -81,14 +85,13 @@ class MovieSearch extends Component {
   render() {
     return (
     	<div>
-    		<div className="div-center">
+    		<div className="div-search">
 	        <form name="SearchMovieForm" onSubmit={this.Apicall}>
-		        <label>Movie:</label>
-		        <input type="text" name="searchMovie" value={this.state.searchMovie} onChange={this.handleInputChange} />
-		        <input type="submit" value="Search" />
+            <TextField name="searchMovie" value={this.state.searchMovie} onChange={this.handleInputChange} hintText="Movie Name" />
+            <RaisedButton type="submit" label="Search" style={styles.searchButton} />
 	        </form>
 	      </div>
-	      <div className="div-center" style={styles.root}>{this.searchedMovies()}</div>
+	      <div style={styles.root}>{this.searchedMovies()}</div>
     	</div>
     );
   }

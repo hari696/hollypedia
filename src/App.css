@@ -1,15 +1,18 @@
 .div-center {
   text-align: center;
-  font-family: times;
+  font-family: courier;
 }
 .app-logo {
   height: 200px;
 }
 .app-title {
   font-size: 1.5em;
-  font-family: courier;
 }
 
 .title-greeting {
   font-size: large;
+}
+
+.div-search{
+	margin: 30px;
 }

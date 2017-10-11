@@ -16,3 +16,16 @@
 .div-search{
 	margin: 30px;
 }
+
+h3 > span{
+	color: #505050;
+	font-weight: normal;
+}
+
+.div-movie > h3{
+	font-weight: 500;
+}
+
+.div-home-button{
+	margin: 20px 0;
+}

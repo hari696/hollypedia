@@ -8,7 +8,7 @@ class AppRoutes extends Component {
     return (
       <Router history={browserHistory}>
         <Route path="/" component={App} />
-        <Route path="/movie/:title" component={MovieView} />
+        <Route path="/movie" component={MovieView} />
       </Router>
     );
   }

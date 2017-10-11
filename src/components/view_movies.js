@@ -33,7 +33,7 @@ class ViewMovies extends Component {
       movieLists = (movies).map((movie) =>
         <GridTile
           onClick={(e) => {
-            browserHistory.push('/movie/'+movie.title);
+            browserHistory.push({pathname: '/movie', state: { movie: movie }});
           }}
           key={movie.id}
           title={movie.title}

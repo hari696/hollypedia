@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import ViewMovie from './view_movie';
+import ViewMovies from './view_movies';
 
 class Popular extends Component {
 	constructor(props) {
@@ -41,7 +41,7 @@ class Popular extends Component {
         {this.state.movieStatus === true ? (
           <div>
             <h3>Popular Movies</h3>
-            <ViewMovie moviePopular={this.state.popularMovies} />
+            <ViewMovies moviePopular={this.state.popularMovies} />
           </div>
           ) : <p></p>}
       </div>

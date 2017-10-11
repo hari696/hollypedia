@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import ViewMovie from './view_movie';
+import ViewMovies from './view_movies';
 
 const styles = {
   searchButton:{
@@ -57,7 +57,7 @@ class MovieSearch extends Component {
             <RaisedButton type="submit" label="Search" style={styles.searchButton} />
 	        </form>
 	      </div>
-        {this.state.movieStatus === true ? <ViewMovie movieSearch={this.state.resultMovies} /> : <p></p>}
+        {this.state.movieStatus === true ? <ViewMovies movieSearch={this.state.resultMovies} /> : <p></p>}
     	</div>
     );
   }

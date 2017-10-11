@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
@@ -23,7 +24,7 @@ const styles = {
   }
 };
 
-class ViewMovie extends Component {
+class ViewMovies extends Component {
 
   searchedMovies(){
     let movieLists, movies;
@@ -31,6 +32,9 @@ class ViewMovie extends Component {
     if (movies.length > 0) {
       movieLists = (movies).map((movie) =>
         <GridTile
+          onClick={(e) => {
+            browserHistory.push('/movie/'+movie.title);
+          }}
           key={movie.id}
           title={movie.title}
           subtitle={<span>released on <b>{movie.release_date}</b></span>}
@@ -55,4 +59,4 @@ class ViewMovie extends Component {
   }
 }
 
-export default ViewMovie;
+export default ViewMovies;

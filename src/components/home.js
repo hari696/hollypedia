@@ -6,7 +6,7 @@ import Popular from './popular';
 class Home extends Component {
   render() {
     return (
-    	<div className="div-center">
+    	<div>
     		<div>
 	      	<img src={logo} className="app-logo" alt="logo" />
 	        <h1 className="app-title">Welcome to HollyPedia</h1>

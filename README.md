@@ -9,10 +9,10 @@ Basic idea of Hollypedia is to share information about movies on most of the maj
 # Domain.
 React JS
 # Dependencies.
-axios: ^0.16.2,
-material-ui: ^0.19.4,
-prop-types: ^15.6.0,
-react: ^16.0.0,
-react-dom: ^16.0.0,
-react-router: ^3.2.0,
-react-scripts: 1.0.14
+axios: 0.16.2<br />
+material-ui: 0.19.4<br />
+prop-types: 15.6.0<br />
+react: 16.0.0<br />
+react-dom: 16.0.0<br />
+react-router: 3.2.0<br />
+react-scripts: 1.0.14<br />

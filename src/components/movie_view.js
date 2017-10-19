@@ -43,8 +43,7 @@ class MovieView extends Component {
     movies = this.state.resultMovies.videos.results
     movie_videos= (movies).map((video) =>
       <div>
-        <h3>{video.name}</h3>
-        <h3><span>{video.site}</span></h3>
+        <h3>{video.name} <span>- {video.site}</span></h3>
         <div className="div-video">
           <ReactPlayer controls='true' url={'https://www.youtube.com/watch?v='+video.key} />
         </div>

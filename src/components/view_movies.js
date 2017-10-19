@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
 const styles = {
 	root: {
@@ -37,8 +36,7 @@ class ViewMovies extends Component {
           }}
           key={movie.id}
           title={movie.title}
-          subtitle={<span>released on <b>{movie.release_date}</b></span>}
-          actionIcon={<IconButton><StarBorder color="white" /></IconButton>}>
+          subtitle={<span>released on <b>{movie.release_date}</b></span>}>
           <img alt="Not Available" src={'https://image.tmdb.org/t/p/w500_and_h500_bestv2'+movie.poster_path} />
         </GridTile>
     );

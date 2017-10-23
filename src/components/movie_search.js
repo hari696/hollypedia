@@ -35,7 +35,6 @@ class MovieSearch extends Component {
       method:'POST',
       url:'https://api.themoviedb.org/3/search/movie?api_key=d272326e467344029e68e3c4ff0b4059&language=en-US&query='+this.state.searchMovie
     }).then(response =>  {
-      console.log(response.data.results)
     	if (response.data.results) {
 		    this.setState({
 		      resultMovies: response.data.results,
